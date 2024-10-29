@@ -19,7 +19,7 @@ public class Product {
         this.price = price;
     }
 
-    // Getters and Setters
+
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
@@ -38,7 +38,7 @@ public class Product {
     public double getPrice() { return price; }
     public void setPrice(double price) { this.price = price; }
 
-    // Xuất thông tin sản phẩm ra chuỗi
+
     @Override
     public String toString() {
         return id + ", " + name + ", " + category + ", " + expiryDate + ", " + quantity + ", " + price;

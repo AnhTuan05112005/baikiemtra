@@ -12,7 +12,7 @@ public class ProductManagement {
         List<Product> productList = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(this.filePath))) {
             String temp;
-            // Bỏ qua dòng tiêu đề
+
             bufferedReader.readLine();
             while ((temp = bufferedReader.readLine()) != null) {
                 String[] tempArr = temp.split(",");
@@ -33,7 +33,7 @@ public class ProductManagement {
         return productList;
     }
 
-    // Thêm sản phẩm mới
+
     public void addProduct(Product product) {
         if (product != null && !isExistedProductCode(product.getId())) {
             try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(this.filePath, true))) {
@@ -47,7 +47,7 @@ public class ProductManagement {
         }
     }
 
-    // Cập nhật thông tin sản phẩm
+
     public void updateProduct(int index, Product newProduct) {
         List<Product> productList = this.getProductList();
         if (index >= 0 && index < productList.size()) {
@@ -59,7 +59,7 @@ public class ProductManagement {
         }
     }
 
-    // Hiển thị danh sách sản phẩm
+
     public void displayProducts() {
         List<Product> productList = this.getProductList();
         System.out.println("Current product list:");
@@ -68,7 +68,7 @@ public class ProductManagement {
         }
     }
 
-    // Xóa sản phẩm
+
     public void deleteProduct(int index) {
         List<Product> productList = this.getProductList();
         if (index >= 0 && index < productList.size()) {
@@ -80,7 +80,7 @@ public class ProductManagement {
         }
     }
 
-    // Kiểm tra sản phẩm có tồn tại
+
     public boolean isExistedProductCode(String code) {
         for (Product product : getProductList()) {
             if (product.getId().equals(code)) {
@@ -90,10 +90,10 @@ public class ProductManagement {
         return false;
     }
 
-    // Lưu danh sách sản phẩm vào file
+
     private void saveProductListToFile(List<Product> productList) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(this.filePath))) {
-            bufferedWriter.write("ID,Name,Category,ExpiryDate,Quantity,Price\n"); // Ghi lại tiêu đề
+            bufferedWriter.write("ID,Name,Category,ExpiryDate,Quantity,Price\n");
             for (Product product : productList) {
                 bufferedWriter.write(product.toFileString() + "\n");
             }

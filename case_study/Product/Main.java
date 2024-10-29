@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         ProductManagement pm = new ProductManagement();
         Scanner scanner = new Scanner(System.in);
-        int choice = -1; // Khởi tạo giá trị khác -1 để vào vòng lặp
+        int choice = -1;
 
         do {
             System.out.println("\nMenu:");
@@ -21,10 +21,10 @@ public class Main {
 
             while (!scanner.hasNextInt()) { // Kiểm tra đầu vào
                 System.out.println("Vui lòng nhập một số nguyên từ 1 đến 5.");
-                scanner.next(); // Dọn sạch đầu vào không hợp lệ
+                scanner.next();
             }
             choice = scanner.nextInt();
-            scanner.nextLine(); // Đọc dòng mới
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
