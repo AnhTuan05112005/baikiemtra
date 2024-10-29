@@ -1,0 +1,5 @@
+ID,Name,Category,ExpiryDate,Quantity,Price
+P001,Milk,Dairy,2023-12-01,50,1.25
+P002,Bread,Bakery,2023-11-15,30,0.85
+P003,Eggs,Dairy,2023-11-20,100,0.15
+
